@@ -1,0 +1,19 @@
+/* .img {
+    width: 50%;
+} */
+
+.container {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    margin: 0;
+    padding: 0;
+    gap: 10rem;
+    width: 100%;
+}
+
+/* .img {
+    padding-top: 0;
+    margin-top: 0;
+    width: 50%;
+} */
