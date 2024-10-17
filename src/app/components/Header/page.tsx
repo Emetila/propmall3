@@ -33,7 +33,8 @@
 
 import * as React from "react"
 import Link from "next/link"
-
+import logo from "@/app/asset/logo.svg";
+import Image from "next/image";
 import { cn } from "@/lib/utils"
 import { MdKeyboardArrowDown, MdKeyboardArrowUp } from "react-icons/md";
 import {
@@ -45,6 +46,7 @@ import {
     NavigationMenuTrigger,
     navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu"
+import { Button } from "@/components/ui/button";
 
 const components: { title: string; href: string; description: string }[] = [
     {
@@ -67,47 +69,49 @@ const components: { title: string; href: string; description: string }[] = [
     },
 ]
 
-export function NavigationMenuDemo() {
+export function Header() {
     return (
-        <NavigationMenu>
-            <NavigationMenuList>
-                <NavigationMenuItem>
-                    <NavigationMenuTrigger>Assets</NavigationMenuTrigger>
-                    <NavigationMenuContent>
-                        <ul className="grid gap-3 p-6 md:w-[400px] lg:w-[500px] lg:grid-cols-[.75fr_1fr]">
-                            <li className="row-span-3">
-                                <NavigationMenuLink asChild>
-                                    <a
-                                        className="flex h-full w-full select-none flex-col justify-end rounded-md bg-gradient-to-b from-muted/50 to-muted p-6 no-underline outline-none focus:shadow-md"
-                                        href="/"
-                                    >
-                                        <MdKeyboardArrowDown className="h-6 w-6" />
-                                        <div className="mb-2 mt-4 text-lg font-medium">
-                                            Featured properties
-                                        </div>
-                                        <p className="text-sm leading-tight text-muted-foreground">
-                                            Find your next property buy
-                                        </p>
-                                    </a>
-                                </NavigationMenuLink>
-                            </li>
-                            <li className="row-span-3">
-                                <NavigationMenuLink asChild>
-                                    <a
-                                        className="flex h-full w-full select-none flex-col justify-end rounded-md bg-gradient-to-b from-muted/50 to-muted p-6 no-underline outline-none focus:shadow-md"
-                                        href="/"
-                                    >
-                                        <MdKeyboardArrowDown className="h-6 w-6" />
-                                        <div className="mb-2 mt-4 text-lg font-medium">
-                                            Investments
-                                        </div>
-                                        <p className="text-sm leading-tight text-muted-foreground">
-                                            Explore investment options
-                                        </p>
-                                    </a>
-                                </NavigationMenuLink>
-                            </li>
-                            {/* <ListItem href="/docs" title="Introduction">
+        <header className="flex justify-between px-10 py-5 static">
+            <div>
+                <a href="/home"><Image src={logo} alt="propmall" /></a>
+            </div>
+            <NavigationMenu>
+                <NavigationMenuList>
+                    <NavigationMenuItem>
+                        <NavigationMenuTrigger className="text-green text-[18px] font-bold font-[Montserrat] hover:text-dark-green active:text-violet">Assets</NavigationMenuTrigger>
+                        <NavigationMenuContent className="bg-light-green-active">
+                            <ul className="flex flex-col md:w-[200px] lg:w-[200px] ">
+                                <li >
+                                    <NavigationMenuLink asChild>
+                                        <a
+                                            className="flex h-full w-full select-none flex-col justify-end rounded-md p-2 no-underline outline-none focus:shadow-md hover:bg-green hover:text-light-green"
+                                            href="/"
+                                        >
+                                            <div className="mb-2 mt-4 text-lg font-medium">
+                                                Featured properties
+                                            </div>
+                                            <p className="text-sm leading-tight text-muted-foreground">
+                                                Find your next property buy
+                                            </p>
+                                        </a>
+                                    </NavigationMenuLink>
+                                </li>
+                                <li>
+                                    <NavigationMenuLink asChild>
+                                        <a
+                                            className="flex h-full w-full select-none flex-col justify-end rounded-md p-2 no-underline outline-none focus:shadow-md hover:bg-green hover:text-light-green"
+                                            href="/"
+                                        >
+                                            <div className="mb-2 mt-4 text-lg font-medium">
+                                                Investments
+                                            </div>
+                                            <p className="text-sm leading-tight text-muted-foreground">
+                                                Explore investment options
+                                            </p>
+                                        </a>
+                                    </NavigationMenuLink>
+                                </li>
+                                {/* <ListItem href="/docs" title="Introduction">
                 Re-usable components built using Radix UI and Tailwind CSS.
               </ListItem>
               <ListItem href="/docs/installation" title="Installation">
@@ -116,47 +120,54 @@ export function NavigationMenuDemo() {
               <ListItem href="/docs/primitives/typography" title="Typography">
                 Styles for headings, paragraphs, lists...etc
               </ListItem> */}
-                        </ul>
-                    </NavigationMenuContent>
-                </NavigationMenuItem>
-                <NavigationMenuItem>
-                    <Link href="/docs" legacyBehavior passHref>
-                        <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-                            Our story
-                        </NavigationMenuLink>
-                    </Link>
-                </NavigationMenuItem>
-                <NavigationMenuItem>
-                    <NavigationMenuTrigger>Resources</NavigationMenuTrigger>
-                    <NavigationMenuContent>
-                        <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] ">
-                            {components.map((component) => (
-                                <ListItem
-                                    key={component.title}
-                                    title={component.title}
-                                    href={component.href}
-                                >
-                                    {component.description}
+                            </ul>
+                        </NavigationMenuContent>
+                    </NavigationMenuItem>
+                    <NavigationMenuItem className="text-green hover:text-dark-green active:text-violet">
+                        <Link href="/docs" legacyBehavior passHref>
+                            <NavigationMenuLink className="text-green text-[18px] font-bold font-[Montserrat] hover:text-dark-green active:text-violet">
+                                Our story
+                            </NavigationMenuLink>
+                        </Link>
+                    </NavigationMenuItem>
+                    <NavigationMenuItem>
+                        <NavigationMenuTrigger className="text-green text-[18px] font-bold font-[Montserrat] hover:text-dark-green active:text-violet">Resources</NavigationMenuTrigger>
+                        <NavigationMenuContent className="bg-light-green-active">
+                            <ul className="flex flex-col md:w-[200px] lg:w-[200px] ">
+                                {components.map((component) => (
+                                    <ListItem
+                                        key={component.title}
+                                        title={component.title} className="flex h-full w-full select-none flex-col justify-end rounded-md p-2 no-underline outline-none focus:shadow-md hover:bg-green hover:text-light-green text-lg font-medium"
+                                        href={component.href}
+                                    >
+                                        {component.description}
+                                    </ListItem>
+                                ))}
+                            </ul>
+                        </NavigationMenuContent>
+                    </NavigationMenuItem>
+                    <NavigationMenuItem>
+                        <NavigationMenuTrigger className="text-green text-[18px] font-bold font-[Montserrat] hover:text-dark-green active:text-violet">Support</NavigationMenuTrigger>
+                        <NavigationMenuContent className="bg-light-green-active">
+                            <ul className="flex flex-col w-[120px] gap-3 p-4 md:w-[120px]  lg:w-[300px]">
+
+                                <ListItem href="/live-chat" title="Live chat" className="flex h-full w-full select-none flex-col justify-end rounded-md p-2 no-underline outline-none text-lg font-medium focus:shadow-md hover:bg-green hover:text-light-green">
+                                    Chat with us in real time
                                 </ListItem>
-                            ))}
-                        </ul>
-                    </NavigationMenuContent>
-                </NavigationMenuItem>
-                <NavigationMenu>
-                    <NavigationMenuTrigger>Support</NavigationMenuTrigger>
-                    <NavigationMenuContent>
-                        <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] ">
-                            <ListItem href="/live-chat" title="Live chat">
-                                Chat with us in real time
-                            </ListItem>
-                            <ListItem href="/contact" title="Contact us">
-                                Reach us for more inquiries
-                            </ListItem>
-                        </ul>
-                    </NavigationMenuContent>
-                </NavigationMenu>
-            </NavigationMenuList>
-        </NavigationMenu>
+                                <ListItem href="/contact" title="Contact us" className="flex h-full w-full select-none flex-col justify-end rounded-md p-2 no-underline outline-none focus:shadow-md hover:bg-green hover:text-light-green">
+                                    Reach us for more inquiries
+                                </ListItem>
+                            </ul>
+                        </NavigationMenuContent>
+                    </NavigationMenuItem>
+                </NavigationMenuList>
+            </NavigationMenu>
+
+            <div className="flex items-center justify-center gap-2">
+                <Button variant="secondary">Log in</Button>
+                <Button>Sign up</Button>
+            </div>
+        </header>
     )
 }
 

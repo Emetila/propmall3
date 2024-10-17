@@ -37,7 +37,7 @@ type SignInFormData = {
   password: string;
 };
 
-export const Signin = () => {
+export const Signin: React.FC = () => {
   const { register, handleSubmit, formState: { errors } } = useForm<SignInFormData>({
     resolver: yupResolver(validationSchema),
   });
@@ -86,8 +86,8 @@ export const Signin = () => {
   };
 
   return (
-    <div className="flex items-start overflow-hidden gap-x-20" >
-      <div className="flex-col items-center justify-center py-20 w-1/2 max-sm:w-full max-xsm:w-full xsm:py-0">
+    <div className="flex items-start overflow-hidden gap-x-40" >
+      <div className="flex-col items-center justify-center w-1/2 max-sm:w-full max-xsm:w-full ">
         <div className="inline-flex flex-col justify-center items-center p-6 gap-8">
           <Image src={logo} alt="propmall" className="py-3 sm:py-0, m-0" />
           <p>live your dream with smart investments</p>
@@ -125,7 +125,7 @@ export const Signin = () => {
                 onClick={() => setShowPassword(!showPassword)}
                 className="absolute inset-y-0 right-0 top-5 pr-3 flex items-center"
               >
-                {showPassword ? <RxEyeClosed size={20} /> : <RxEyeOpen size={20} />}
+                {showPassword ? <RxEyeOpen size={20} /> : <RxEyeClosed size={20} />}
               </button>
               {errors.password && <p className="text-red-500 text-sm">{errors.password.message}</p>}
             </div>
@@ -164,7 +164,7 @@ export const Signin = () => {
           </p>
         </div>
       </div >
-      <div className="w-1/2 my-0 -top-36  sm:hidden xsm:hidden md:block lg:block">
+      <div className="grow -mt-20 sm:hidden xsm:hidden md:block lg:block">
         <Image src={image} alt="login" className="w-full my-0 h-100"  />
         <div className="flex flex-col absolute items-center top-80 px-20 py-20">
           <h2 className="text-dark-violet text-xl openSans.className font-bold py-5">You are back!</h2>

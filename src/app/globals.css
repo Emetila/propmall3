@@ -2,8 +2,22 @@
 @tailwind components;
 @tailwind utilities;
 
-body {
-  font-family: Merriweather, Arial, Helvetica, sans-serif;
+.primary {
+  @apply flex bg-green text-light-green rounded font-['Open_Sans'] hover:bg-dark-green py-4 px-6 text-base
+}
+
+.secondary {
+  @apply flex bg-transparent text-green-active border border-solid border-green-active py-4 px-6 text-base rounded hover:bg-green hover:text-light-green
+}
+
+.shadow {
+  @apply drop-shadow-sm shadow-shadow
+}
+@layer base {
+  @font-face {
+    font-family: 'Montserrat', 'Open Sans', 'Merriweather';
+    src: url(fonts/Montserrat/Montserrat-VariableFont_wght.ttf);
+  }
 }
 
 /* @layer utilities {
