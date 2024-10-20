@@ -1,0 +1,15 @@
+const httpURL = "https://staging-api.propmall.io/v1";
+// const httpURL = "https://api.propmall.io/v1";
+
+
+export async function postReq(url, body, headers) {
+    return fetch(httpURL + url, {
+        method: "POST",
+        body: JSON.stringify(body),
+        headers: {
+            "Content-Type": "application/json",
+            "CLIENT": "website", 
+            ...headers
+        }
+    })
+}

@@ -27,10 +27,12 @@ const config: Config = {
   	colors: {
   		transparent: 'transparent',
   		current: 'currentColor',
-		overlay: 'rgba(4, 3, 3, 0.40);',
-		'shadow': 'rgba(198, 198, 198, 0.25)',
+  		overlay: 'rgba(4, 3, 3, 0.40);',
+  		'light-black': '#04010A',
+		'grey': '#585959',
+  		shadow: 'rgba(198, 198, 198, 0.25)',
   		green: '#57B890',
-		'green-active': '#469373',
+  		'green-active': '#469373',
   		'light-green': '#EEF8F4',
   		'light-green-active': '#CBE9DD',
   		'dark-green': '#275341',
@@ -69,6 +71,18 @@ const config: Config = {
   		animation: {
   			'accordion-down': 'accordion-down 0.2s ease-out',
   			'accordion-up': 'accordion-up 0.2s ease-out'
+  		},
+  		colors: {
+  			sidebar: {
+  				DEFAULT: 'hsl(var(--sidebar-background))',
+  				foreground: 'hsl(var(--sidebar-foreground))',
+  				primary: 'hsl(var(--sidebar-primary))',
+  				'primary-foreground': 'hsl(var(--sidebar-primary-foreground))',
+  				accent: 'hsl(var(--sidebar-accent))',
+  				'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
+  				border: 'hsl(var(--sidebar-border))',
+  				ring: 'hsl(var(--sidebar-ring))'
+  			}
   		}
   	}
   },
