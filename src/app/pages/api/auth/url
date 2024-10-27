@@ -7,9 +7,23 @@ export async function postReq(url, body, headers) {
         method: "POST",
         body: JSON.stringify(body),
         headers: {
-            "Content-Type": "application/json",
+            "Content-Type": "application/json, charset=UTF-8",
             "CLIENT": "website", 
             ...headers
         }
     })
 }
+
+// export async function PostReq() {
+//     const response = await fetch(httpURL, {
+//         method: 'POST',
+//         body: JSON.stringify({
+//             email,
+//             password,
+//         }),
+//         headers: {
+//             'Content-type': 'application/json; charset=UTF-8',
+//         },
+//     }); 
+// }
+
