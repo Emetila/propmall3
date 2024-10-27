@@ -1,0 +1,94 @@
+const faqData = [
+    
+{
+    "Ide":1,
+    question: 'How to get started on Propmall?',
+    answer: 'To get started, sign up, complete your profile, and explore investment opportunities.',
+  },
+  {
+    "Ide":2,
+    question: 'What information do I need to provide to create an account?',
+    answer: 'You need to provide basic personal information such as your name, email, and contact details.',
+  },
+  {
+    "Ide":3,
+    question: 'Is my investment secure?',
+    answer: 'Yes, Propmall ensures all investments are protected with high-security standards.',
+  },
+  {
+    "Ide":4,
+    question: 'What is the minimum investment amount?',
+    answer: 'The minimum investment amount at Propmall is $1,000, making it accessible for investors at all levels.',
+  },
+  {
+    "Ide":5,
+    question: 'What types of investments does Propmall offer?',
+    answer: 'Propmall offers a range of real estate investment opportunities including commercial and residential properties.',
+  },
+  {
+    "Ide":6,
+    question: 'How can I track my investments?',
+    answer: 'You can track your investments directly from your dashboard, available upon login.',
+  },
+];
+
+export default faqData;
+
+
+
+import React from 'react';
+import FaqItem from './faqItem';
+import faqData from '../data/faq';
+
+const Faq = () => {
+    return (
+    <div className='max-w-3xl mx-auto p-4 md:p-6 lg:p-8'>
+    <h1 className='text-3xl font-bold mb-4'>Frequently Asked Questions</h1>
+    <div className='faq-container'>
+    {faqData.map((item, index) => (
+<Faqitem key={index} question={item.question} answer={item.answer} />
+))}
+</div>
+</div>
+);
+};
+
+export default Faq;
+
+
+
+
+import Faq from .....
+
+const FaqPage = () => {
+    return (
+    <div>
+    <Faq />
+    </div>
+    );
+};
+
+export default FaqPage;
+
+
+
+// Styling
+import React from 'react';
+import FaqItem from './....';
+import faqData from './...';
+
+const Faq = () => {
+    return (
+    <div className='max-w-3xl mx-auto p-4 md:p-6 lg:p-8 bg-white rounded-lg shadow-md'>
+    <h1 className='text-3xl font-bold mb-4 text-gray-900'>Frequently Asked Questions</h1>
+    <div className='faq-container divide-y divide-gray-200'>
+    {faqData.map((item, index) => ( 
+    <FaqItem key={index} question={item.question} answer={item.answer} />
+    ))}
+    </div>
+    </div>
+    );
+};
+
+export default Faq;
+
