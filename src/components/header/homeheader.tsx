@@ -116,7 +116,7 @@ export default function Header() {
                     </div>
                 </div>
                 <div className="md:flex justify-center items-center gap-5 grow sm:hidden xsm:hidden">
-                    <Button variant="default"><Link href="#">Download App</Link></Button>
+                    <Button variant="default"><Link href="/signup">Get Started</Link></Button>
                     {/* <Button><Link href="/signup">Sign up</Link></Button> */}
                 </div>
 
@@ -213,7 +213,7 @@ export default function Header() {
 
                     <div className="md:hidden lg:hidden flex items-start w-full gap-[]20px sm:block xsm:block">
                         {/* <Button variant="secondary" className="mb-3 w-full"><Link href="/signin">Log in</Link></Button> */}
-                        <Button className="w-full"><Link href="/signup">Download App</Link></Button>
+                        <Button className="w-full"><Link href="/signup">Get Started</Link></Button>
                     </div>
                 </div>
             )}
